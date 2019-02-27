@@ -38,10 +38,48 @@ app.use(express.static("public"));
 // Mount all resource routes
 app.use("/api/users", usersRoutes(knex));
 
+
+const users = {
+    id: "user1",
+    email: "ryanandrew.sibat@gmail.com",
+    password: "1",
+    phone: "6475503849"
+};
+
+
 // Home page
 app.get("/", (req, res) => {
-  res.render("index");
+let templateVars = { username: users.id };
+  res.render("homepage", templateVars);
 });
+
+//menu
+app.get("/", (req, res) => {
+let templateVars = { username: users.id };
+  res.render("menu", templateVars);
+});
+
+//menu to receive request about orders
+app.post("/menu", (req, res) => {
+let templateVars = { username: users.id };  //receive data when users choose from menu
+  res.render("menu", templateVars);
+});
+
+app.get("/:shortURL/checkout", (req, res) => {
+let templateVars = { username: users.id };
+  res.render("checkout", templateVars);
+});
+
+app.post("/:shortURL/checkout/complete", (req, res) => {
+let templateVars = { username: users.id };  //receive data when users confirm their order
+  res.render("checkout", templateVars);
+});
+
+app.post("/:shortURL/checkout/delete", (req, res) => {
+let templateVars = { username: users.id };  //receive data when users delete orders
+  res.render("checkout", templateVars);
+});
+
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
