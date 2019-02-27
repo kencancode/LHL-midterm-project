@@ -4,4 +4,7 @@ public/styles
 *.log
 *.sqlite3
 .DS_Store
+<<<<<<< HEAD
 db/.DS_Store
+=======
+>>>>>>> 02fed8a14ff366839560d3d0de929660fb2303e8
