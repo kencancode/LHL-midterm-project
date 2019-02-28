@@ -19,7 +19,56 @@
 
     <div class="container">
       <% for (item of items) { %>
+<<<<<<< HEAD
        
+=======
+        <h2>
+          <%= item.item_name %> <%= item.price %>
+          <button class="add-to-cart"
+            data-item-name="<%= item.item_name %>"
+            data-item-price="<%= item.price %>"
+            data-item-id="<%= item.id %>">+</button>
+        </h2>
+      <% } %>
+
+      <div class="container menu-main row">
+
+        <div class="menu-items">
+          <ul>
+            <li><h4>California Roll</h4></li>
+            <li>Price: $9.99</li>
+            <li>Fresh maki rolls made with crab, avocado and cucumbers.</li>
+          </ul>
+        </div>
+        <div class="menu-items">
+          <ul>
+            <li><h4>Spicy Salmon Roll</h4></li>
+            <li>Price: $13.99</li>
+            <li>Fresh maki rolls made with salmon, tempura bits and spicy mayonaise </li>
+          </ul>
+        </div>
+        <div class="menu-items">
+          <ul>
+            <li><h4>Tuna Rolls</h4></li>
+            <li>Price: $13.99</li>
+            <li>Fresh maki rolls made with fresh blue fin tuna</li>
+          </ul>
+        </div>
+        <div class="menu-items">
+          <ul>
+            <li><h4>Spider Rolls</h4></li>
+            <li>Price: $12.99</li>
+            <li>Fresh maki rolls made with soft shell crab, mayonaise,cucumber and tempura bits</li>
+          </ul>
+        </div>
+        <div class="menu-items">
+          <ul>
+            <li><h4>California Roll</h4></li>
+            <li>Price: $9.99</li>
+            <li>Fresh maki rolls made with crab, avocado and cucumbers.</li>
+          </ul>
+        </div>
+>>>>>>> checkout
         <div class="menu-items">
           <h2>
             <%= item.item_name %> 
