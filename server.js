@@ -15,7 +15,9 @@ const morgan      = require('morgan');
 const knexLogger  = require('knex-logger');
 
 // Seperated Routes for each Resource
-const usersRoutes = require("./routes/users");
+// const usersRoutes = require("./routes/users");
+const menuRoutes = require("./routes/menu");
+const checkoutRoutes = require("./routes/checkout");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -36,12 +38,41 @@ app.use("/styles", sass({
 app.use(express.static("public"));
 
 // Mount all resource routes
-app.use("/api/users", usersRoutes(knex));
+// app.use("/api/users", usersRoutes(knex));
+
+app.use("/menu", menuRoutes(knex));
+app.use("/checkout", checkoutRoutes(knex));
+
+
+const users = {
+    id: "user1",
+    email: "ryanandrew.sibat@gmail.com",
+    password: "1",
+    phone: "6475503849"
+};
+
 
 // Home page
 app.get("/", (req, res) => {
-  res.render("index");
+let templateVars = { };
+  res.render("homepage", templateVars);
 });
+
+app.get("/:shortURL/checkout", (req, res) => {
+let templateVars = {  };
+  res.render("checkout", templateVars);
+});
+
+app.post("/:shortURL/checkout/complete", (req, res) => {
+let templateVars = { };  //receive data when users confirm their order
+  res.render("checkout", templateVars);
+});
+
+app.post("/:shortURL/checkout/delete", (req, res) => {
+let templateVars = { };  //receive data when users delete orders
+  res.render("checkout", templateVars);
+});
+
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
