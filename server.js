@@ -43,6 +43,13 @@ app.use(express.static("public"));
 app.use("/menu", menuRoutes(knex));
 app.use("/checkout", checkoutRoutes(knex));
 
+app.get('/clear-cart', (req, res) => {
+  const templateVars = {
+  clearall: true
+}
+  res.render('cart', templateVars);
+});
+
 
 const users = {
     id: "user1",

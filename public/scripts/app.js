@@ -31,10 +31,11 @@ $(() => {
   const cart = JSON.parse(localStorage.getItem("cart")) || {}
 
   for (lineItem in cart) {
+    const final_price = parseInt(cart[lineItem].price)*parseInt(cart[lineItem].quantity)
     $("table.cart").append(`
       <tr>
         <td>${cart[lineItem].itemName}</td>
-        <td>${cart[lineItem].price}</td>
+        <td>$ ${final_price}.00</td>
         <td>${cart[lineItem].quantity}</td>
       </tr>
     `)
