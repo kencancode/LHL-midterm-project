@@ -4,7 +4,7 @@ exports.up = async function(knex, Promise) {
       table.increments("id");
       table.string("username");
       table.string("email");
-      table.integer("phone");
+      table.string("phone");
     });
   await knex.schema.createTable("orders", function(table) {
       table.increments("id");
@@ -15,7 +15,7 @@ exports.up = async function(knex, Promise) {
   return knex.schema.createTable("items", function(table) {
       table.increments("id");
       table.string("item_name");
-      table.integer("price");
+      table.string("price");
     })
 };
 
