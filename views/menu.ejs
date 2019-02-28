@@ -25,6 +25,10 @@
       <% for (item of items) { %>
         <h2>
           <%= item.item_name %> <%= item.price %>
+          <button class="add-to-cart"
+            data-item-name="<%= item.item_name %>"
+            data-item-price="<%= item.price %>"
+            data-item-id="<%= item.id %>">+</button>
         </h2>
       <% } %>
 
