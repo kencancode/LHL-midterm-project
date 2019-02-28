@@ -15,9 +15,21 @@
 
   <body>
       <h1 class="jumbotron text-center">Menu</h1>
-      
+
+      This is the third item:
+
+      <p>
+        <%= items[2].item_name %>
+      </p>
+
+      <% for (item of items) { %>
+        <h2>
+          <%= item.item_name %> <%= item.price %>
+        </h2>
+      <% } %>
+
       <div class="container menu-main row">
-        
+
         <div class="menu-items">
           <ul>
             <li><h4>California Roll</h4></li>
@@ -103,6 +115,6 @@
           </ul>
         </div>
 
-      </div>  
+      </div>
   </body>
 </html>
