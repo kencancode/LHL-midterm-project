@@ -49,13 +49,14 @@ const users = {
 
 // Home page
 app.get("/", (req, res) => {
-let templateVars = { username: users.id };
+let templateVars = { };
   res.render("homepage", templateVars);
 });
 
 //menu
-app.get("/", (req, res) => {
-let templateVars = { username: users.id };
+app.get("/menu", (req, res) => {
+let templateVars = {};
+  console.log(users)
   res.render("menu", templateVars);
 });
 
@@ -66,17 +67,17 @@ let templateVars = { username: users.id };  //receive data when users choose fro
 });
 
 app.get("/:shortURL/checkout", (req, res) => {
-let templateVars = { username: users.id };
+let templateVars = {  };
   res.render("checkout", templateVars);
 });
 
 app.post("/:shortURL/checkout/complete", (req, res) => {
-let templateVars = { username: users.id };  //receive data when users confirm their order
+let templateVars = { };  //receive data when users confirm their order
   res.render("checkout", templateVars);
 });
 
 app.post("/:shortURL/checkout/delete", (req, res) => {
-let templateVars = { username: users.id };  //receive data when users delete orders
+let templateVars = { };  //receive data when users delete orders
   res.render("checkout", templateVars);
 });
 
