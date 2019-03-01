@@ -5,7 +5,8 @@
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/menu.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|News+Cycle|Permanent+Marker|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
@@ -14,15 +15,37 @@
   </head>
 
   <body>
-      <h1 class="jumbotron text-center">Menu</h1>
-      <% for (item of items) { %>
-        <h2>
-          <%= item.item_name %> <%= item.price %>
-          <button class="add-to-cart"
-            data-item-name="<%= item.item_name %>"
-            data-item-price="<%= item.price %>"
-            data-item-id="<%= item.id %>">+</button>
-        </h2>
-      <% } %>
+    <% include partials/_header %>
+    <div class="jumbotron banner">
+      <h1>Menu</h1>
+    </div>
+<!-- need to add subtract button -->
+    <div class="container d-flex flex-wrap justify-content-center">
+      <% for (item of items) { %> 
+        <div class="card m-2" style="width: 18rem;">
+          <div class="menu-image">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1512132411229-c30391241dd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Card image cap">
+            <h5 class="card-title menu-item"><%= item.item_name %></h5>
+          </div>
+          <div class="card-body">
+             <p class="card-text menu-price d-inline">$<%= item.price %></p>
+              <button class="float-right add-to-cart btn btn-primary menu-button"
+              data-item-name="<%= item.item_name %>"
+              data-item-price="<%= item.price %>"
+              data-item-id="<%= item.id %>">+</button>
+
+              <button class="float-right remove-from-cart btn btn-primary menu-button mr-2"
+              data-item-name="<%= item.item_name %>"
+              data-item-price="<%= item.price %>"
+              data-item-id="<%= item.id %>">-</button>
+          </div>
+      </div>
+      <% } %> 
+
+      <div class="checkout" >
+        <a href="http://localhost:8080/menu/checkout">Checkout</a>
+      </div>
+
+      <!-- <button class="btn btn-primary">check out</button> -->
   </body>
 </html>
