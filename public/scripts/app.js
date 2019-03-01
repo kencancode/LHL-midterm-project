@@ -1,12 +1,4 @@
 $(() => {
-  // $.ajax({
-  //   method: "GET",
-  //   url: "/api/users"
-  // }).done((users) => {
-  //   for(user of users) {
-  //     $("<div>").text(user.name).appendTo($("body"));
-  //   }
-  // });;
 
   $("button.add-to-cart").click((e) => {
     const cart = JSON.parse(localStorage.getItem("cart")) || {}
@@ -50,17 +42,26 @@ $(() => {
 
   const cart = JSON.parse(localStorage.getItem("cart")) || {}
 
+  let final_price = 0
+
   for (lineItem in cart) {
-    const final_price = parseInt(cart[lineItem].price)*parseInt(cart[lineItem].quantity)
+    let line_item_price = parseInt(cart[lineItem].price)*parseInt(cart[lineItem].quantity)
     $("table.cart").append(`
       <tr>
         <td>${cart[lineItem].itemName}</td>
-        <td>$ ${final_price}.00</td>
         <td>${cart[lineItem].quantity}</td>
+        <td>$ ${line_item_price}.00</td>
       </tr>
     `)
-
+    final_price += line_item_price
   }
 
+   $("table.cart").append(`
+      <tr>
+        <td></td>
+        <td><strong>TOTAL</strong></td>
+        <td>$ ${final_price}.00</td>
+      </tr>
+    `)
 
 });
