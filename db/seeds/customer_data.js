@@ -1,45 +1,47 @@
 
 exports.seed = async function(knex, Promise) {
-  await knex('orders').del()
-  await knex('customers').del()
-  await knex('items').del()
+  await knex.raw('truncate customers cascade')
+  await knex.raw('truncate orders cascade')
+  await knex.raw('truncate items cascade')
+
+  let customer1 = await knex('customers').insert({
+    id: 1,
+    username: 'Monster',
+    email: 'cookiemonster@example.com',
+    phone: '1234567890',
+  });
+  let customer2 = await knex('customers').insert({
+    id: 2,
+    username: 'Elmo',
+    email: 'elmo@example.com',
+    phone: '2234567890',
+  });
+  let customer3 = await knex('customers').insert({
+    id: 3,
+    username: 'Oscar',
+    email: 'oscar@example.com',
+    phone: '2134567890',
+  });
 
   return Promise.all([
     // Inserts seed entries for customers table
-    knex('customers').insert({
-      id: 1,
-      username: 'Monster',
-      email: 'cookiemonster@example.com',
-      phone: '1234567890',
-    }),
-    knex('customers').insert({
-      id: 2,
-      username: 'Elmo',
-      email: 'elmo@example.com',
-      phone: '2234567890',
-    }),
-    knex('customers').insert({
-      id: 3,
-      username: 'Oscar',
-      email: 'oscar@example.com',
-      phone: '2134567890',
-    }),
+    
     // Inserts seed entries for orders table
     knex('orders').insert({
       username: 'Monster',
       checkout: true,
-      customer_id: 1,
+      customer_id: customer1.id,
     }),
     knex('orders').insert({
       username: 'Elmo',
       checkout: true,
-      customer_id: 2,
+      customer_id: customer2.id,
 
     }),
     knex('orders').insert({
       username: 'Oscar',
       checkout: true,
-      customer_id: 3,
+      customer_id: customer3.id,
     }),
     // Inserts seed entries for items table
     knex('items').insert({
