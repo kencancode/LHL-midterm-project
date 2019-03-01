@@ -8,6 +8,8 @@ $(() => {
   //   }
   // });;
 
+  
+
   $("button.add-to-cart").click((e) => {
     const cart = JSON.parse(localStorage.getItem("cart")) || {}
 
