@@ -19,6 +19,18 @@ const knexLogger  = require('knex-logger');
 const menuRoutes = require("./routes/menu");
 const checkoutRoutes = require("./routes/checkout");
 
+// twilio messaging serice
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+
+app.post('/sms', (req, res) => {
+  const twiml = new MessagingResponse();
+
+  twiml.message('The Robots are coming! Head for the hills!');
+
+  res.writeHead(200, {'Content-Type': 'text/xml'});
+  res.end(twiml.toString());
+});
+
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
