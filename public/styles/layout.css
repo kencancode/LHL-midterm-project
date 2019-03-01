@@ -1,11 +1,53 @@
+.jumbotron {
+  font-family: 'Permanent Marker', cursive;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: #fc4f53 !important;
+  color: #32fee3;
+}
+
+.jumbotron h1 {
+  padding-top: 100px;
+  font-size: 6em;
+  letter-spacing: 2px;
+}
+
 .container {
-  background-color: red;
-  max-width: 30%;
   margin: 0 auto;
 }
 
-body {
-  background-color: red;
+.menu-image {
+  position: relative;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.menu-image:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+  opacity: .6;
+}
+
+.menu-item {
+  font-family: 'News Cycle', sans-serif;
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.menu-price {
+  padding-top: 10px;
+}
+
+.checkout-button {
+  float: right;
 }
 
 #homepage {
