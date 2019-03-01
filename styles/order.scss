@@ -19,12 +19,6 @@ body {
   background-size: cover;
 }
 
-.carousel-title {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 30px;
-  color: black;
-}
-
 .below-carousel {
   padding-top:30px;
 }
@@ -48,8 +42,19 @@ body {
 
 .back-to-menu {
   padding-left: 30%;
+  padding-top:20px;
 }
 
 .btn-outline-danger {
-  padding-left: 30%;
+  margin-left: 18%
+}
+
+.your-cart-title {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-left: 40%
+}
+
+.card {
+  margin-top: 20px;
 }
