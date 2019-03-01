@@ -32,6 +32,7 @@
           </div>
           <div class="card-body">
              <p class="card-text menu-price d-inline">$<%= item.price %></p>
+             <span id="add-confirmation">added to cart</span>
               <button class="float-right add-to-cart btn btn-primary menu-button"
               data-item-name="<%= item.item_name %>"
               data-item-price="<%= item.price %>"
@@ -50,12 +51,27 @@
             <h5 class="card-title menu-item">Checkout</h5>
           </div>
           <div class="card-body">
-             <form action="http://localhost:8080/menu/checkout">
+            <form action="http://localhost:8080/menu/checkout">
               <input class="btn btn-primary" type="submit" value="Proceed to checkout"/>
             </form>
           </div>
         </div>
     </div>
 
+    
+<!-- flip card -->
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1468465369248-3054456ce11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80" alt="Card image cap">
+    </div>
+    <div class="flip-card-back">
+        <form action="http://localhost:8080/menu/checkout">
+          <input class="btn btn-primary" type="submit" value="Proceed to checkout"/>
+        </form>
+    </div>
+  </div>
+</div>
+<!-- flip card -->\
   </body>
 </html>
