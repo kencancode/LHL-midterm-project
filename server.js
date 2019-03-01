@@ -31,37 +31,6 @@ app.post('/sms', (req, res) => {
   res.end(twiml.toString());
 });
 
-
-//twilio funtion
-const sendMessage = function(num){
-  const accountSid = process.env.TWILIO_ACCOUNT_SID;
-  const authToken = process.env.TWILIO_AUTH_TOKEN;
-  const client = require('twilio')(accountSid, authToken);
-
-  client.messages
-    .create({
-     body: 'Your order is being prepared...it will be ready in 30 minutes',
-     from: '+12048175572',
-     to: '+18168245079'
-   })
-  .then(message => console.log(message.sid));
-}
-
-const orderConfirmation = function(num){
-  const accountSid = 'AC56f85866c3068afcd9e0d59604c94827';
-  const authToken = 'ffc9ef1254a8fba6d1a3a62bc6c599fc';
-  const client = require('twilio')(accountSid, authToken);
-
-  client.messages
-    .create({
-     body: 'Order received, get it ready...',
-     from: '+12048175572',
-     to: '+14168381807'
-   })
-  .then(message => console.log(message.sid));
-}
-
-
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
@@ -114,14 +83,8 @@ let templateVars = {  };
 });
 
 app.post("/:shortURL/checkout/complete", (req, res) => {
-// let templateVars = { };  //receive data when users confirm their order
-var orders = {
-  email: req.body.email,
-  phone: req.body.phone
-}
-sendMessage();
-orderConfirmation();
-  res.redirect("/");
+let templateVars = { };  //receive data when users confirm their order
+  res.render("checkout", templateVars);
 });
 
 app.post("/:shortURL/checkout/delete", (req, res) => {
@@ -133,7 +96,3 @@ let templateVars = { };  //receive data when users delete orders
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
-
-
-
-
