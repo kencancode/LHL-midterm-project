@@ -39,13 +39,20 @@
               data-item-price="<%= item.price %>"
               data-item-id="<%= item.id %>">-</button>
           </div>
-      </div>
+        </div>
       <% } %> 
+      <div class="card m-2" style="width: 18rem;">
+          <div class="menu-image">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1468465369248-3054456ce11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80" alt="Card image cap">
+            <h5 class="card-title menu-item">Checkout</h5>
+          </div>
+          <div class="card-body">
+             <form action="http://localhost:8080/menu/checkout">
+              <input class="btn btn-primary" type="submit" value="Proceed to checkout"/>
+            </form>
+          </div>
+        </div>
+    </div>
 
-      <div class="checkout" >
-        <a href="http://localhost:8080/menu/checkout">Checkout</a>
-      </div>
-
-      <!-- <button class="btn btn-primary">check out</button> -->
   </body>
 </html>
