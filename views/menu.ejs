@@ -32,6 +32,7 @@
           </div>
           <div class="card-body">
              <p class="card-text menu-price d-inline">$<%= item.price %></p>
+             <span id="add-confirmation">added to cart</span>
               <button class="float-right add-to-cart btn btn-primary menu-button"
               data-item-name="<%= item.item_name %>"
               data-item-price="<%= item.price %>"
@@ -50,7 +51,7 @@
             <h5 class="card-title menu-item">Checkout</h5>
           </div>
           <div class="card-body">
-             <form action="http://localhost:8080/menu/checkout">
+            <form action="http://localhost:8080/menu/checkout">
               <input class="btn btn-primary" type="submit" value="Proceed to checkout"/>
             </form>
           </div>

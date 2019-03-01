@@ -133,7 +133,3 @@ let templateVars = { };  //receive data when users delete orders
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
-
-
-
-
