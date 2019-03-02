@@ -63,6 +63,19 @@
             <h5 class="card-title menu-item">Checkout</h5>
           </div>
           <div class="card-body">
+             <div class="row">
+              <div class="col-8 items-selcted">
+              <h4 class="your-cart-title">Your Cart</h1>
+                <table class="cart etable table-light">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                  </tr>
+             </thead>
+             </table>
+          </div>
             <form action="http://localhost:8080/menu/checkout">
               <input class="btn btn-primary" type="submit" value="Proceed to checkout"/>
             </form>
@@ -79,6 +92,7 @@
     <div class="flip-card-back">
         <form action="http://localhost:8080/menu/checkout">
           <input class="btn btn-primary" type="submit" value="Proceed to checkout"/>
+
         </form>
     </div>
   </div>
