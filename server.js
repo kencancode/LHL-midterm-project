@@ -131,11 +131,6 @@ orderConfirmation();
   res.redirect("/:shortURL/checkout/complete");
 });
 
-
-
-
-
-
 app.post("/:shortURL/checkout/delete", (req, res) => {
 let templateVars = { };  //receive data when users delete orders
   res.render("checkout", templateVars);
