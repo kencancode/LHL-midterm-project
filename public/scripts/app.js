@@ -7,9 +7,12 @@ $(() => {
     const itemId = item.data("item-id")
     const sideQ = $('#side-quantity')
 
+
   if (cart[itemId]) {
       added.text('Good choice!').css("display", "inline-block").fadeOut(1200)
       cart[itemId].quantity += 1
+      item.html(cart[itemId].quantity)
+      console.log()
     } else {
       cart[itemId] = {
         quantity: 1,
@@ -24,20 +27,24 @@ $(() => {
   $("button.remove-from-cart").click((e) => {
     const cart = JSON.parse(localStorage.getItem("cart")) || {}
     const added = $(".add-confirmation")
-    const item = $(e.target)
-    const itemId = item.data("item-id")
+    const removeFromCart = $(e.target)
+    const itemId = removeFromCart.data("item-id")
+    const addButton = removeFromCart.siblings('.add-to-cart')
 
 
     if (cart[itemId].quantity === 1){
       delete cart[itemId]
     } else if (cart[itemId]) {
       added.text('Awww...').css("display", "inline-block").fadeOut(1200)
+      console.log(addButton)
       cart[itemId].quantity -= 1
-    } else  {
+
+      addButton.html(cart[itemId].quantity)
+    } else {
       cart[itemId] = {
-        quantity: 0,
-        itemName: item.data("item-name"),
-        price: item.data("item-price")
+        quantity: 1,
+        itemName: removeFromCart.data("item-name"),
+        price: removeFromCart.data("item-price")
       }
     }
 
@@ -58,7 +65,7 @@ $(() => {
     $("table.cart").append(`
       <tr>
         <td>${cart[lineItem].itemName}</td>
-        <td>${cart[lineItem].quantity}</td>
+        <td id=${lineItem}>${cart[lineItem].quantity}</td>
         <td>$ ${line_item_price}.00</td>
       </tr>
     `)
