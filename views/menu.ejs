@@ -18,12 +18,15 @@
 
   <body>
 
-    <% include partials/_header %>
     <div class="jumbotron banner">
       <h1>Menu</h1>
     </div>
-<!-- need to add subtract button -->
-    <div class="container d-flex flex-wrap justify-content-center">
+
+
+<div class="row">
+<div class="col-sm-9">
+<!-- left content goes below -->
+<div class="container d-flex flex-wrap justify-content-center">
       <% for (item of items) { %>
         <div class="card m-2" style="width: 18rem;">
           <div class="menu-image">
@@ -44,7 +47,16 @@
           </div>
         </div>
       <% } %>
-      <div class="card m-2" style="width: 18rem;">
+
+    </div>
+<!-- left content goes above -->
+ </div>
+
+
+
+  <div class="col-sm-3">
+<!-- right content goes below -->
+<div class="card m-2" style="width: 18rem;">
           <div class="menu-image">
             <img class="card-img-top" src="https://images.unsplash.com/photo-1468465369248-3054456ce11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80" alt="Card image cap">
             <h5 class="card-title menu-item">Checkout</h5>
@@ -55,7 +67,11 @@
             </form>
           </div>
         </div>
-    </div>
+<!-- right content goes above -->
+  </div>
+</div>
+
+
 
   </body>
 </html>

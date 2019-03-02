@@ -119,6 +119,7 @@ var orders = {
   email: req.body.email,
   phone: req.body.phone
 }
+
 sendMessage();
 orderConfirmation();
 

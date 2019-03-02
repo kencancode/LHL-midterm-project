@@ -62,10 +62,19 @@ height: 100%
 }
 
 .complete-page {
+  padding-top: 5%;
   font-family: 'Roboto Condensed', sans-serif;
   background: url(../images/checkout-complete.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.main-title-complete {
+  font-size: 60px;
+}
+
+.main-subsitle-complete {
+  font-family: 'Roboto', sans-serif;
 }
 
