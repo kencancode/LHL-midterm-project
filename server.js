@@ -108,19 +108,19 @@ let templateVars = { };
   res.render("homepage", templateVars);
 });
 
-app.get("/:shortURL/checkout", (req, res) => {
+app.get("/menu/checkout", (req, res) => {
 let templateVars = {  };
   res.render("checkout", templateVars);
 });
 
 
-app.get("/:shortURL/checkout/complete", (req, res) => {
+app.get("/menu/checkout/complete", (req, res) => {
 let templateVars = {  };
   res.render("complete");
 });
 
 
-app.post("/:shortURL/checkout/complete", (req, res) => {
+app.post("/menu/checkout/complete", (req, res) => {
 // let templateVars = { };  //receive data when users confirm their order
 var orders = {
   email: req.body.email,
@@ -128,10 +128,10 @@ var orders = {
 }
 sendMessage();
 orderConfirmation();
-  res.redirect("/:shortURL/checkout/complete");
+  res.redirect("/menu/checkout/complete");
 });
 
-app.post("/:shortURL/checkout/delete", (req, res) => {
+app.post("/menu/checkout/delete", (req, res) => {
 let templateVars = { };  //receive data when users delete orders
   res.render("checkout", templateVars);
 });

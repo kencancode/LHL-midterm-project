@@ -29,7 +29,7 @@
 <!-- left content goes below -->
 <div class="container d-flex flex-wrap justify-content-center">
       <% for (item of items) { %>
-        <div class="card m-2" style="width: 18rem;">
+        <div class="card m-2 button-parent" style="width: 18rem;">
           <div class="menu-image">
             <img class="card-img-top" src="https://images.unsplash.com/photo-1512132411229-c30391241dd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Card image cap">
             <h5 class="card-title menu-item"><%= item.item_name %></h5>
@@ -60,21 +60,10 @@
 <div class="card m-2 menu-sidebar" style="width: 18rem;">
           <div class="menu-image">
             <img class="card-img-top" src="https://images.unsplash.com/photo-1468465369248-3054456ce11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80" alt="Card image cap">
-            <h5 class="card-title menu-item">Checkout</h5>
           </div>
           <div class="card-body" id="sidecart">
              <div class="row">
               <div class="col-8 items-selcted">
-              <h4 class="your-cart-title">Your Cart</h1>
-                <table class="cart etable table-light">
-                <thead>
-                  <tr>
-                    <th scope="col" id="side-name">Name</th>
-                    <th scope="col" id="side-quantity">Quantity</th>
-                    <th scope="col" id="side-price">Price</th>
-                  </tr>
-             </thead>
-             </table>
           </div>
             <form action="http://localhost:8080/menu/checkout">
               <input class="btn btn-primary" type="submit" value="Proceed to checkout"/>
@@ -83,20 +72,6 @@
         </div>
     </div>
 
-<!-- flip card -->
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1468465369248-3054456ce11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80" alt="Card image cap">
-    </div>
-    <div class="flip-card-back">
-        <form action="http://localhost:8080/menu/checkout">
-          <input class="btn btn-primary" type="submit" value="Proceed to checkout"/>
-
-        </form>
-    </div>
-  </div>
-</div>
 
   </body>
 </html>
