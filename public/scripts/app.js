@@ -1,6 +1,6 @@
 $(() => {
-  // 
-  
+  //
+
 
   $("button.add-to-cart").click((e) => {
     const added = $(".add-confirmation")
@@ -28,12 +28,12 @@ $(() => {
     const item = $(e.target)
     const itemId = item.data("item-id")
 
-    if (cart[itemId]) {
+    if (cart[itemId] && cart[itemId].quantity >= 1) {
       added.text('Awww...').css("display", "inline-block").fadeOut(1200)
       cart[itemId].quantity -= 1
-    } else {
+    } else  {
       cart[itemId] = {
-        quantity: 1,
+        quantity: 0,
         itemName: item.data("item-name"),
         price: item.data("item-price")
       }
