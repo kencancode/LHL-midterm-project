@@ -1,14 +1,13 @@
 $(() => {
-  //
-
 
   $("button.add-to-cart").click((e) => {
     const added = $(".add-confirmation")
     const cart = JSON.parse(localStorage.getItem("cart")) || {}
     const item = $(e.target)
     const itemId = item.data("item-id")
+    const sideQ = $('#side-quantity')
 
-    if (cart[itemId]) {
+  if (cart[itemId]) {
       added.text('Good choice!').css("display", "inline-block").fadeOut(1200)
       cart[itemId].quantity += 1
     } else {
@@ -28,7 +27,10 @@ $(() => {
     const item = $(e.target)
     const itemId = item.data("item-id")
 
-    if (cart[itemId] && cart[itemId].quantity >= 1) {
+
+    if (cart[itemId].quantity === 1){
+      delete cart[itemId]
+    } else if (cart[itemId]) {
       added.text('Awww...').css("display", "inline-block").fadeOut(1200)
       cart[itemId].quantity -= 1
     } else  {
@@ -42,6 +44,10 @@ $(() => {
     window.localStorage.setItem("cart", JSON.stringify(cart))
   })
 
+
+  $(".clear-cart").click((e) => {
+    window.localStorage.removeItem("cart")
+  })
 
   const cart = JSON.parse(localStorage.getItem("cart")) || {}
 
@@ -68,4 +74,3 @@ $(() => {
     `)
 
 });
-
