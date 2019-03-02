@@ -119,9 +119,15 @@ var orders = {
   email: req.body.email,
   phone: req.body.phone
 }
+
 sendMessage();
 orderConfirmation();
-  res.redirect("/");
+
+  res.render("complete");
+});
+
+app.get("/:shortURL/checkout/complete", (req, res) => {
+  res.render("complete");
 });
 
 app.post("/:shortURL/checkout/delete", (req, res) => {
