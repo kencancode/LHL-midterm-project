@@ -85,6 +85,20 @@ let templateVars = {  };
 app.post("/:shortURL/checkout/complete", (req, res) => {
 let templateVars = { };  //receive data when users confirm their order
   res.render("checkout", templateVars);
+// let templateVars = { };  //receive data when users confirm their order
+var orders = {
+  email: req.body.email,
+  phone: req.body.phone
+}
+
+sendMessage();
+orderConfirmation();
+
+  res.render("complete");
+});
+
+app.get("/:shortURL/checkout/complete", (req, res) => {
+  res.render("complete");
 });
 
 app.post("/:shortURL/checkout/delete", (req, res) => {

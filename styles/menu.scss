@@ -7,6 +7,9 @@
 
     height: 200px;
     background-color: #fc4f53 !important;
+    width: 100%;
+    height: 200px;
+    background-color: #fc4f53 !important;
     color: #32fee3;
 }
 
@@ -19,6 +22,8 @@
     font-size: 6em;
     letter-spacing: 2px;
 
+    font-size: 6em;
+    letter-spacing: 2px;
 }
 .container {
     margin: 0 auto;
@@ -101,3 +106,16 @@
     color: white;
     transform: rotateY(180deg);
   }
+.menu-sidebar {
+    border: 1px solid grey;
+}
+
+#banner-title {
+    display: inline-block;
+    width: 40%;
+}
+
+.add-confirmation {
+    display: none;
+    float: right;
+}
