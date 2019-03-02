@@ -25,7 +25,7 @@ exports.seed = async function(knex, Promise) {
 
   return Promise.all([
     // Inserts seed entries for customers table
-    
+
     // Inserts seed entries for orders table
     knex('orders').insert({
       username: 'Monster',
@@ -47,6 +47,7 @@ exports.seed = async function(knex, Promise) {
     knex('items').insert({
       item_name: 'Spicy Salmon Roll',
       price: '11.00',
+      image: 'TESTING'
     }),
     knex('items').insert({
       item_name: 'Philadelphia Roll',
