@@ -1,17 +1,20 @@
+$primary-font: 'Roboto Condensed';
+$secondary-font: 'Roboto';
+
+
 .jumbotron {
-    font-family: 'Permanent Marker', cursive;
-    position: relative;
-
-    height: 300px;
-    background-color: #fc4f53 !important;
-
-    width: 100%;
-    color: #32fee3;
+  font-family: $primary-font;
+  position: relative;
+  height: 400px;
+  width: 100%;
+  background-image: url('../images/menu-page.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .jumbotron h1 {
 
-    padding-top: 100px;
+    padding-top: 90px;
     font-size: 6em;
     letter-spacing: 2px;
 }
@@ -24,6 +27,7 @@
     text-align: center;
     color: white;
     letter-spacing: 2px;
+    border-radius: 10px
 
     &:before {
         content: '';
@@ -33,12 +37,12 @@
         bottom: 0;
         left: 0;
         background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-        opacity: .6;
+        opacity: 0;
     }
 }
 
 .menu-item {
-    font-family: 'News Cycle', sans-serif;
+    font-family: $secondary-font;
     position: absolute;
     bottom: 8px;
     left: 16px;
@@ -104,22 +108,36 @@
 #banner-title {
     display: inline-block;
     width: 40%;
+    padding-left: 40%;
 }
 
-.add-confirmation {
+/*.add-confirmation {
     display: none;
     float: right;
-}
+    font-size:5px;
+}*/
 
 /*today's change*/
 .checkout-button {
-  margin-top: 30px;
-  padding-top:20px;
-  margin-bottom: 20px;
-  padding-bottom:20px;
-  margin-left: 50px;
+  margin-top: 10px;
+  padding-top:10px;
+  margin-bottom: 10px;
+  padding-bottom:10px;
+  margin-left: 80px;
+}
+
+.card {
+  border-radius: 30px
+}
+
+.justify-content-center {
+  padding-top: 40px;
+}
+
+.col-sm-3{
+  margin-top: 40px
 }
 
 .right-card {
-  margin-right:20px;
+  margin-right:10px;
 }

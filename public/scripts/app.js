@@ -9,7 +9,7 @@ $(() => {
 
 
   if (cart[itemId]) {
-      added.text('Good choice!').css("display", "inline-block").fadeOut(1200)
+      // added.text('Good choice!').css("display", "inline-block").fadeOut(1200)
       cart[itemId].quantity += 1
       item.html(cart[itemId].quantity)
       console.log()
@@ -35,7 +35,7 @@ $(() => {
     if (cart[itemId].quantity === 1){
       delete cart[itemId]
     } else if (cart[itemId]) {
-      added.text('Awww...').css("display", "inline-block").fadeOut(1200)
+      // added.text('Awww...').css("display", "inline-block").fadeOut(1200)
       console.log(addButton)
       cart[itemId].quantity -= 1
 

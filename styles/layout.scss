@@ -1,8 +1,10 @@
 @import './menu.scss';
 
+$primary-font: 'Roboto Condensed';
+$secondary-font: 'Roboto';
+
 #homepage {
   background-color: white;
-  font-family: 'Roboto Condensed', sans-serif;
   background: url(../images/sushi-gourmet-homepage.jpg);
   opacity: 1;
   background-size: cover;
@@ -11,7 +13,7 @@
 }
 
 .menu-title {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: $primary-font;
   background: url(../images/menu-page.jpg);
   background-size: cover;
   background-position: center;
@@ -23,14 +25,18 @@
 }
 
 h4 {
-  font-family: 'Roboto', sans-serif;
+  font-family: $secondary-font;
   font-size: 8px
 }
 
 .main-title {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: $primary-font;
   font-weight: 500;
   font-size:90px;
+}
+
+.main-subsitle{
+  font-family: $secondary-font;
 }
 
 .menu-list {
@@ -41,7 +47,7 @@ h4 {
 }
 
 .main-subtitle {
-  font-family: 'Roboto', sans-serif;
+  font-family: $secondary-font;
   font-weight: 200;
   font-size: 20px;
 }
@@ -56,14 +62,14 @@ height: 100%
 }
 
 .btn-outline-danger {
-  font-family: 'Roboto', sans-serif;
+  font-family: $secondary-font;
   font-size: 18px;
   padding: 15px 18px;
 }
 
 .complete-page {
   padding-top: 5%;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: $primary-font;
   background: url(../images/checkout-complete.jpg);
   background-size: cover;
   background-position: center;
@@ -75,6 +81,6 @@ height: 100%
 }
 
 .main-subsitle-complete {
-  font-family: 'Roboto', sans-serif;
+  font-family: $secondary-font;
 }
 

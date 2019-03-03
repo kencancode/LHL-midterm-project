@@ -1,14 +1,15 @@
 .jumbotron {
-  font-family: 'Permanent Marker', cursive;
+  font-family: "Roboto Condensed";
   position: relative;
-  height: 300px;
-  background-color: #fc4f53 !important;
+  height: 400px;
   width: 100%;
-  color: #32fee3;
+  background-image: url("../images/menu-page.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .jumbotron h1 {
-  padding-top: 100px;
+  padding-top: 90px;
   font-size: 6em;
   letter-spacing: 2px;
 }
@@ -22,9 +23,10 @@
   text-align: center;
   color: white;
   letter-spacing: 2px;
+  border-radius: 10px .menu-image;
 }
 
-.menu-image:before {
+.menu-image :before {
   content: '';
   position: absolute;
   top: 0;
@@ -32,11 +34,11 @@
   bottom: 0;
   left: 0;
   background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-  opacity: .6;
+  opacity: 0;
 }
 
 .menu-item {
-  font-family: 'News Cycle', sans-serif;
+  font-family: "Roboto";
   position: absolute;
   bottom: 8px;
   left: 16px;
@@ -101,29 +103,37 @@
 #banner-title {
   display: inline-block;
   width: 40%;
+  padding-left: 40%;
 }
 
-.add-confirmation {
-  display: none;
-  float: right;
-}
-
+/*.add-confirmation {
+    display: none;
+    float: right;
+    font-size:5px;
+}*/
 /*today's change*/
 .checkout-button {
-  margin-top: 30px;
-  padding-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  margin-left: 50px;
+  margin-top: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  margin-left: 35px;
 }
 
-.right-card {
-  margin-right: 20px;
+.card {
+  border-radius: 30px;
+}
+
+.justify-content-center {
+  padding-top: 40px;
+}
+
+.col-sm-3 {
+  margin-top: 40px;
 }
 
 #homepage {
   background-color: white;
-  font-family: 'Roboto Condensed', sans-serif;
   background: url(../images/sushi-gourmet-homepage.jpg);
   opacity: 1;
   background-size: cover;
@@ -132,7 +142,7 @@
 }
 
 .menu-title {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed";
   background: url(../images/menu-page.jpg);
   background-size: cover;
   background-position: center;
@@ -144,14 +154,18 @@
 }
 
 h4 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto";
   font-size: 8px;
 }
 
 .main-title {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed";
   font-weight: 500;
   font-size: 90px;
+}
+
+.main-subsitle {
+  font-family: "Roboto";
 }
 
 .menu-list {
@@ -161,7 +175,7 @@ h4 {
 }
 
 .main-subtitle {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto";
   font-weight: 200;
   font-size: 20px;
 }
@@ -176,14 +190,14 @@ html {
 }
 
 .btn-outline-danger {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   padding: 15px 18px;
 }
 
 .complete-page {
   padding-top: 5%;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed";
   background: url(../images/checkout-complete.jpg);
   background-size: cover;
   background-position: center;
@@ -195,5 +209,5 @@ html {
 }
 
 .main-subsitle-complete {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto";
 }

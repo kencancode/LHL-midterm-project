@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
 
     <link rel="stylesheet" href="/styles/menu.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|News+Cycle|Permanent+Marker|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
@@ -18,9 +18,10 @@
 
   <body>
 
+
     <div class="jumbotron banner">
       <h1 id="banner-title">MENU</h1>
-      <h1 class="add-confirmation">good choice...</h1>
+<!--       <h1 class"add-confirmation">good choice...</h1> -->
     </div>
 
 
@@ -36,12 +37,12 @@
           </div>
           <div class="card-body">
              <p class="card-text menu-price d-inline">$<%= item.price %></p>
-              <button class="float-right add-to-cart btn btn-primary menu-button"
+              <button class="float-right add-to-cart btn btn-outline-danger menu-button"
               data-item-name="<%= item.item_name %>"
               data-item-price="<%= item.price %>"
               data-item-id="<%= item.id %>">+</button>
 
-              <button class="float-right remove-from-cart btn btn-primary menu-button mr-2"
+              <button class="float-right remove-from-cart btn btn-outline-danger menu-button mr-2"
               data-item-name="<%= item.item_name %>"
               data-item-price="<%= item.price %>"
               data-item-id="<%= item.id %>">-</button>
@@ -57,7 +58,7 @@
 
   <div class="col-sm-3">
 <!-- right content goes below -->
-<div class="card m-2 menu-sidebar right-card" style="width: 20rem;">
+<div class="card m-2 menu-sidebar right-card" style="width: 18rem;">
           <div class="menu-image">
             <img class="card-img-top" src="https://images.unsplash.com/photo-1468465369248-3054456ce11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80" alt="Card image cap">
           </div>
@@ -66,7 +67,7 @@
               <div class="col-8 items-selcted">
           </div>
             <form action="http://localhost:8080/menu/checkout">
-              <input class="btn btn-primary checkout-button" type="submit" value="Proceed to checkout"/>
+              <input class="btn btn-danger checkout-button" type="submit" value="VIEW CART"/>
             </form>
           </div>
         </div>
