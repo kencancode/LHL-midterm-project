@@ -1,3 +1,6 @@
+$primary-font: 'Roboto Condensed';
+$secondary-font: 'Roboto';
+
 body {
   font-family: 'Roboto', sans-serif;
   background: white;
@@ -41,7 +44,7 @@ body {
 }
 
 .back-to-menu {
-  padding-left: 30%;
+  padding-left: 10%;
   padding-top:20px;
 }
 
@@ -57,4 +60,15 @@ body {
 
 .card {
   margin-top: 20px;
+}
+
+.checkout-button{
+  font-family: $secondary-font;
+  margin-left: 15%;
+  margin-top: 10%;
+}
+
+.clear-cart {
+  padding-left: 10%;
+  padding-top: 20px;
 }
