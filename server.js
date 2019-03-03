@@ -86,13 +86,13 @@ app.use(express.static("public"));
 app.use("/menu", menuRoutes(knex));
 app.use("/checkout", checkoutRoutes(knex));
 
-app.get('/clear-cart', (req, res) => {
-  const templateVars = {
-  clearall: true
-}
-  res.render('cart', templateVars);
-});
 
+// app.get('/clear-cart', (req, res) => {
+//   const templateVars = {
+//   clearall: true
+// }
+//   res.render('cart', templateVars);
+// });
 
 const users = {
     id: "user1",
@@ -102,26 +102,21 @@ const users = {
 };
 
 
-// Home page
 app.get("/", (req, res) => {
-let templateVars = { };
-  res.render("homepage", templateVars);
+  res.render("homepage");
 });
 
 app.get("/menu/checkout", (req, res) => {
-let templateVars = {  };
-  res.render("checkout", templateVars);
+  res.render("checkout");
 });
 
 
 app.get("/menu/checkout/complete", (req, res) => {
-let templateVars = {  };
   res.render("complete");
 });
 
 
 app.post("/menu/checkout/complete", (req, res) => {
-// let templateVars = { };  //receive data when users confirm their order
 var orders = {
   email: req.body.email,
   phone: req.body.phone
@@ -130,12 +125,6 @@ sendMessage();
 orderConfirmation();
   res.redirect("/menu/checkout/complete");
 });
-
-app.post("/menu/checkout/delete", (req, res) => {
-let templateVars = { };  //receive data when users delete orders
-  res.render("checkout", templateVars);
-});
-
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
