@@ -4,6 +4,10 @@
 
 Wasa-bae is a full-stack web application allowing clients to order Japanese delicacies. 
 
+!["Homepage"](https://github.com/ryaaanandrew/LHL-midterm-project/blob/master/docs/wasabae-homepage.pngg)
+!["Confirmation Page"](https://github.com/ryaaanandrew/LHL-midterm-project/blob/master/docs/wasabae-cart.png)
+
+
 ## Functionality
 A user can:
 
